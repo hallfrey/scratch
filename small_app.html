@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative AI Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgba(220, 162, 162, 0.897);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #app-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            font-size: 24px;
+            color:rgb(222, 137, 63);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px 0;
+            border: none;
+            background-color: #2868ac;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="app-container">
+        <h1>AI Magic Box</h1>
+        <button onclick="generateContent('riddle')">Get a Riddle</button>
+        <button onclick="generateContent('joke')">Get a Joke</button>
+        <button onclick="generateContent('quote')">Get a Quote</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const content = {
+            riddle: [
+                "What has to be broken before you can use it? An egg!",
+                "I speak without a mouth and hear without ears. What am I? An echo!",
+                "What has many keys but can't open a single lock? A piano!",
+                "What goes up but never comes down? Your Age!"
+            ],
+            joke: [
+                "Why don't skeletons fight each other? They don't have the guts!",
+                "Why did the scarecrow win an award? Because he was outstanding in his field!",
+                "How do you organize a space party? You planet!",
+                "I try not to tell dad jokes. But when I do he thinks they're funny!"
+            ],
+            quote: [
+                "The best way to predict the future is to invent it. - Alan Kay",
+                "Life is what happens when you're busy making other plans. - John Lennon",
+                "Do what you can, with what you have, where you are. - Theodore Roosevelt",
+                "Happiness is not by chance, but by choice. -Jim Rohn"
+            ]
+        };
+
+        function generateContent(type) {
+            const items = content[type];
+            const randomIndex = Math.floor(Math.random() * items.length);
+            document.getElementById('output').innerText = items[randomIndex];
+        }
+    </script>
+</body>
+</html>
